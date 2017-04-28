@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!--柱状图-->
+    <div id="column"></div>
+
+    <!--折线图-->
+    <div id="line"></div>
+
+    <!--饼图-->
+    <div id="pie"></div>
+<script src="chart.js"></script>
+<script>
+	// 柱状图
+	new Chart('#column', {
+		width: 600,
+		height: 400,
+		type: 'column',   // 要画的图表的类型。。柱状图 column  折线图 line 饼图 pie
+		data: [
+			{money: 60, name: '抽烟', color: 'red'},
+			{money: 150, name: '吃饭', color: 'green'},
+			{money: 400, name: '上网', color: 'blue'}
+		]
+	});
+
+    //饼图
+	new Chart('#pie', {
+		width: 600,
+		height: 600,
+		type: 'column',   // 要画的图表的类型。。柱状图 column  折线图 line 饼图 pie
+		data: [
+			{money: 60, name: '抽烟', color: 'red'},
+			{money: 150, name: '吃饭', color: 'green'},
+			{money: 400, name: '上网', color: 'blue'}
+		]
+	})
+
+</script>
+</body>
+</html>
