@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图表</title>
+</head>
+<body>
+    <!--柱状图-->
+  <div id="column"></div>
+    <!--折线图-->
+  <div id="line"></div>
+   <!--//饼图-->
+  <div id="pie"></div>
+
+   <script src="draw.js"></script>
+   <script>
+       //调用插件
+       new Draw('#column',{
+       	   width:500,
+           height:400,
+           type:'column',
+           data:[
+               {money:60,name:'抽烟',color:'red'},
+			   {money:150,name:'吃饭',color:'green'},
+			   {money:400,name:'上网',color:'blue'}
+           ]
+       })
+   </script>
+</body>
+</html>
