@@ -27,11 +27,23 @@
 		]
 	});
 
+	//折线图
+	new Chart('#line', {
+		width: 600,
+		height: 600,
+		type: 'line',   // 要画的图表的类型。。柱状图 column  折线图 line 饼图 pie
+		data: [
+			{money: 60, name: '抽烟', color: 'red'},
+			{money: 150, name: '吃饭', color: 'green'},
+			{money: 400, name: '上网', color: 'blue'}
+		]
+	});
+
     //饼图
 	new Chart('#pie', {
 		width: 600,
 		height: 600,
-		type: 'column',   // 要画的图表的类型。。柱状图 column  折线图 line 饼图 pie
+		type: 'pie',   // 要画的图表的类型。。柱状图 column  折线图 line 饼图 pie
 		data: [
 			{money: 60, name: '抽烟', color: 'red'},
 			{money: 150, name: '吃饭', color: 'green'},

@@ -57,6 +57,7 @@ Chart.prototype = {
     },
     // 画柱状图
     drawcolumn: function() {
+        //画坐标系
         var ctx = this.ctx;
         this.drawXY();
         // 数据的条数
@@ -82,12 +83,53 @@ Chart.prototype = {
     },
     // 画折线图
     drawline: function() {
+		//画坐标系
+		var ctx = this.ctx;
+		this.drawXY();
+		// 数据的条数
+		var data = this.config.data;
+		var pos = this.pos;
+		var xdeep = parseInt(pos.width / (data.length + 1));
+		// y 轴的 百分比
+		var cvh = pos.height / this.getDataMax();
         
+		//画数据点
     },
     // 画饼图
     drawpie: function() {
+        var ctx=this.ctx;
+        var data=this.config.data;
+		var total = 0;
+		var start = 0;
+		for (var i = 0; i < data.length; i++) {
+			total += data[i].money
+		}
         
-    },
+		ctx.translate(250, 200);
+	
+		for (var j = 0; j < data.length; j++) {
+		
+			ctx.beginPath();
+		
+			// total        data[i].money
+			// -----   =  -----------------
+			// 360                 ?
+		
+			var end = (data[j].money * 360 / total) * (Math.PI / 180);
+		
+			ctx.moveTo(0, 0);
+			ctx.fillStyle = data[j].color;
+			ctx.arc(0, 0, 150, 0, end);
+		
+			ctx.rotate(end);
+		
+			// end 不是要画的度数
+		
+			// start += end;
+			ctx.fill();
+		}
+	
+	},
     // 画坐标系的方法
     drawXY: function() {
         var ctx = this.ctx;
